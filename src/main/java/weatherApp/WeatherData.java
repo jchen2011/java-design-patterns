@@ -32,7 +32,7 @@ public class WeatherData implements Subscriber{
     @Override
     public void notifyObservers() {
         for (Observer observer : observers) {
-            observer.update(getTemp(), getHumidty(), getPressure());
+            observer.update();
         }
     }
 
@@ -51,8 +51,5 @@ public class WeatherData implements Subscriber{
     public float getPressure() {
         return this.pressure;
     }
-
-
-
 
 }

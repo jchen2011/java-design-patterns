@@ -1,10 +1,7 @@
 package main.java.weatherApp;
 
 public class StatisticsDisplay implements Observer, DisplayElement{
-    private float temp;
-    private float humidity;
-    private float pressure;
-    private WeatherData weatherData;
+    private final WeatherData weatherData;
 
     public StatisticsDisplay(WeatherData weatherData) {
         this.weatherData = weatherData;
@@ -12,9 +9,7 @@ public class StatisticsDisplay implements Observer, DisplayElement{
     }
 
     @Override
-    public void update(float temp, float humidity, float pressure) {
-        this.temp = temp;
-        this.humidity = humidity;
+    public void update() {
         display();
     }
 
