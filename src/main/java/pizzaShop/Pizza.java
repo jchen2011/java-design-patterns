@@ -4,10 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Pizza {
-    public String name;
-    public String dough;
-    public String sauce;
+    private String name;
+    private String dough;
+    private String sauce;
     List<String> toppings = new ArrayList<>();
+
+    public Pizza(String name, String dough, String sauce) {
+        this.name = name;
+        this.dough = dough;
+        this.sauce = sauce;
+    }
     public void prepare() {
         System.out.println("Preparing " + name);
         System.out.println("Tossing dough...");
