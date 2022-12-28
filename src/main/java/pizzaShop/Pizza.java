@@ -1,28 +1,20 @@
 package main.java.pizzaShop;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class Pizza {
+    private PizzaIngredientFactory ingredientFactory;
     private String name;
-    private String dough;
-    private String sauce;
-    List<String> toppings = new ArrayList<>();
+    private Dough dough;
+    private Sauce sauce;
+    private Veggies veggies[];
+    private Cheese cheese;
+    private Pepperoni pepperoni;
+    private Clams clam;
 
-    public Pizza(String name, String dough, String sauce) {
-        this.name = name;
-        this.dough = dough;
-        this.sauce = sauce;
+    public Pizza(PizzaIngredientFactory ingredientFactory) {
+        this.ingredientFactory = ingredientFactory;
     }
-    public void prepare() {
-        System.out.println("Preparing " + name);
-        System.out.println("Tossing dough...");
-        System.out.println("Adding sauce...");
-        System.out.println("Adding toppings: ");
-        for (String topping : toppings) {
-            System.out.println("  " + topping);
-        }
-    }
+    public abstract void prepare();
 
     public void bake() {
         System.out.println("Bake for 25 minutes at 350");
@@ -34,5 +26,17 @@ public abstract class Pizza {
 
     public void box() {
         System.out.println("Place pizza in official PizzaStore box");
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public PizzaIngredientFactory getIngredientFactory() {
+        return this.ingredientFactory;
     }
 }
