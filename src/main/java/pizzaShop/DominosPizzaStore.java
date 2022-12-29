@@ -1,30 +1,15 @@
 package main.java.pizzaShop;
 
+import main.java.pizzaShop.pizza.*;
+
 public class DominosPizzaStore extends PizzaStore {
     public Pizza createPizza(String type) {
         DominosIngredientFactory ingredientFactory = new DominosIngredientFactory();
         return switch (type) {
-            case "hawaii" -> {
-                Pizza pizza = new HawaiiPizza(ingredientFactory);
-                pizza.setName("Domino's hawaii pizza");
-                yield pizza;
-            }
-            case "margaritha" -> {
-                Pizza pizza = new MargarithaPizza(ingredientFactory);
-                pizza.setName("Domino's margaritha pizza");
-                yield pizza;
-            }
-            case "pepperoni" -> {
-                Pizza pizza = new PepperoniPizza(ingredientFactory);
-                pizza.setName("Domino's pepperoni pizza");
-                yield pizza;
-            }
-
-            case "shoarma" -> {
-                Pizza pizza = new ShoarmaPizza(ingredientFactory);
-                pizza.setName("Domino's shoarma pizza");
-                yield pizza;
-            }
+            case "hawaii" -> new HawaiiPizza("Domino's hawaii pizza", ingredientFactory);
+            case "margaritha" -> new MargarithaPizza("Domino's margaritha pizza", ingredientFactory);
+            case "pepperoni" -> new PepperoniPizza("Domino's pepperoni pizza", ingredientFactory);
+            case "shoarma" -> new ShoarmaPizza("Domino's shoarma pizza", ingredientFactory);
             default -> throw new IllegalArgumentException("Unknown value: " + type);
         };
     }

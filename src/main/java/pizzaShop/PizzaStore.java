@@ -1,5 +1,7 @@
 package main.java.pizzaShop;
 
+import main.java.pizzaShop.pizza.Pizza;
+
 public abstract class PizzaStore {
 
     public Pizza orderPizza(String type) {

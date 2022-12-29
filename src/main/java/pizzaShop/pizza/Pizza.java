@@ -1,5 +1,8 @@
-package main.java.pizzaShop;
+package main.java.pizzaShop.pizza;
 
+
+import main.java.pizzaShop.PizzaIngredientFactory;
+import main.java.pizzaShop.toppings.*;
 
 public abstract class Pizza {
     private PizzaIngredientFactory ingredientFactory;
@@ -11,7 +14,8 @@ public abstract class Pizza {
     private Pepperoni pepperoni;
     private Clams clam;
 
-    public Pizza(PizzaIngredientFactory ingredientFactory) {
+    public Pizza(String name, PizzaIngredientFactory ingredientFactory) {
+        this.name = name;
         this.ingredientFactory = ingredientFactory;
     }
     public abstract void prepare();
@@ -26,10 +30,6 @@ public abstract class Pizza {
 
     public void box() {
         System.out.println("Place pizza in official PizzaStore box");
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getName() {

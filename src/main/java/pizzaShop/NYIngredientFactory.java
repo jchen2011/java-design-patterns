@@ -1,5 +1,7 @@
 package main.java.pizzaShop;
 
+import main.java.pizzaShop.toppings.*;
+
 public class NYIngredientFactory implements PizzaIngredientFactory{
     @Override
     public Dough createDough() {

@@ -1,8 +1,13 @@
-package main.java.pizzaShop;
+package main.java.pizzaShop.pizza;
+
+import main.java.pizzaShop.PizzaIngredientFactory;
+import main.java.pizzaShop.toppings.Cheese;
+import main.java.pizzaShop.toppings.Dough;
+import main.java.pizzaShop.toppings.Sauce;
 
 public class PepperoniPizza extends Pizza{
-    public PepperoniPizza(PizzaIngredientFactory factory) {
-        super(factory);
+    public PepperoniPizza(String name, PizzaIngredientFactory factory) {
+        super(name, factory);
     }
 
     @Override
